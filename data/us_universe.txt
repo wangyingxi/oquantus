@@ -1,0 +1,4 @@
+# 示例美股代码
+AAPL
+MSFT
+TSLA

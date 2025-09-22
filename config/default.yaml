@@ -1,0 +1,31 @@
+universe:
+  hong_kong:
+    market: hk
+    type: file
+    path: ../data/hk_universe.txt
+  united_states:
+    market: us
+    type: file
+    path: ../data/us_universe.txt
+
+data:
+  fetcher: yahoo
+  lookback_days: 120
+  batch_size: 10
+
+strategies:
+  - name: momentum_cross
+    type: moving_average_crossover
+    params:
+      short_window: 5
+      long_window: 20
+      min_volume: 1000000
+  - name: rsi_rebound
+    type: rsi_rebound
+    params:
+      period: 14
+      oversold: 30
+      exit_threshold: 40
+
+stock_pool:
+  path: ../data/stock_pool.json
